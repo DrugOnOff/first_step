@@ -1,0 +1,110 @@
+package day3;
+
+import java.util.Arrays;
+import java.util.Random;
+public class Arrays1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] data = { -1, 9, 2, 8, 4, -1, -50, 22, 13, -60 };
+		// printArray(new int[0]);
+		// printArray(new int[]{1,2,3,4});
+		// System.out.println(oddElementSum(data));
+		// System.out.println(avarage(data));
+		// System.out.println(avarage(data));
+		// swap(data);
+		sort(data);
+	}
+
+	static void printArray(int[] data) {
+		if (data == null) {
+			System.out.println(" ");
+			return;
+		}
+		if (data.length == 0) {
+			System.out.println("[]");
+			return;
+		}
+		System.out.print("[");
+		int i = 0;
+		while (i < data.length - 1) {
+			System.out.print(data[i] + ", ");
+			i++;
+		}
+		System.out.print(data[i]);
+		System.out.print("]");
+	}
+
+	static long oddElementSum(int[] data) {
+		if (data == null || data.length == 0) {
+			return -1;
+		}
+		long sum = 0;
+		for (int i = 1; i < data.length; i += 2) {
+			sum += data[i];
+
+		}
+		return sum;
+	}
+
+	static double avarage(int[] data) {
+		if (data == null || data.length == 0) {
+			return -1;
+		}
+		double sum = 0;
+		for (int i : data) {
+			sum += i;
+		}
+		double avrg = sum / data.length;
+		return avrg;
+
+	}
+
+	static void swap(int[] data) {
+		if (data != null) {
+			
+			for (int i = 1; i < data.length; i++) {
+				if (data[i - 1] > data[i]) {
+					int temp = data[i - 1];
+					data[i - 1] = data[i];
+					data[i] = temp;
+				}
+			}
+		}
+	}
+
+	static void sort(int[] data) {
+		if (data != null) {
+			long time=
+			for (int j = 1; j < data.length; j++) {
+				swap(data);
+				System.out.println("step:"+ j+ "=>" +Arrays.toString(data));
+			}
+		}
+
+//		System.out.println(java.util.Arrays.toString(data));
+	}
+	
+	static void sort1(int[] data) {
+		if (data != null) {
+			for (int j = 0; j < data.length; j++) {
+				for (int i = 1; i < data.length; i++) {
+					if (data[i - 1] > data[i]) {
+						int temp = data[i - 1];
+						data[i - 1] = data[i];
+						data[i] = temp;
+						System.out.println(java.util.Arrays.toString(data));
+					}
+				}
+				System.out.println("step:"+ j+ "=>" +Arrays.toString(data));
+			}
+		}
+
+		System.out.println(java.util.Arrays.toString(data));
+	}
+
+}
