@@ -1,0 +1,90 @@
+package day3;
+
+
+import java.util.Arrays;
+import java.util.Random;
+public class Arrays2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] data = { -1, 9, 2, 8, 4, -1, -50, 22, 13, -60 };
+		// swap(data);
+		sort(createArray(100000));
+		sortMy(createArray(100000));
+		
+//		sort(data);
+//		sortMy(data);
+//		System.out.println(Arrays.toString(createArray(50)));
+	}
+
+
+
+	static int swap(int[] data, int i, int k) {
+		int temp;
+				if (data[i] > data[k]) {
+					temp = data[k];
+					data[k] = data[i];
+					data[i] = temp;
+					return 1;
+				
+				}
+				return 0;
+	}
+
+	static void sort(int[] data) {
+		if (data != null) {
+			long time = System.currentTimeMillis();
+			int activeLength=data.length-1;
+			for (int j = 1; j < data.length; j++) {
+				for (int i = 0; i < activeLength; i++) {
+					swap(data, i, i+1);
+				}
+				activeLength--;
+			}
+			System.out.println(System.currentTimeMillis() -time);
+		}
+
+//		System.out.println(java.util.Arrays.toString(data));
+	}
+	
+	static void sortMy(int[] data) {
+		if (data != null) {
+			int step =data.length;
+			long time = System.currentTimeMillis();
+			for (int j = 1; j < data.length; j++) {
+				for (int i = 1; i < step; i++) {
+					if (data[i - 1] > data[i]) {
+						int temp = data[i - 1];
+						data[i - 1] = data[i];
+						data[i] = temp;
+//						System.out.println(java.util.Arrays.toString(data));
+//						System.out.println(step);
+					}
+				}
+				step--;
+//				System.out.println("step:"+ j+ "=>" +Arrays.toString(data));
+			}
+			System.out.println(System.currentTimeMillis() -time);
+		}
+
+//		System.out.println(java.util.Arrays.toString(data));
+	}
+	
+	
+	static int[] createArray(int digit){
+	int[] testArray= new int[digit];
+	for (int i = 0; i < testArray.length; i++) {
+		Random r =new Random();
+				
+		testArray [i]=r.nextInt(digit);
+	}
+	//System.out.println(Arrays.toString(testArray));
+	return testArray;
+	}
+	
+	
+}
