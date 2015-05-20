@@ -1,0 +1,62 @@
+package day3;
+
+
+import java.io.ObjectInputStream.GetField;
+import java.util.Arrays;
+import java.util.Random;
+
+public class Arrays3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		String [][] countrys = new String [6][] ;
+//		countrys [0]= new String [] {"China", "Peking", "1354040000"};
+//		countrys [1]= new String [] {"India", "New Delhi", "1210569573"};
+//		countrys [2]= new String [] {"USA", "Washington D.C.", "316305000"};
+//		countrys [3]= new String [] {"Indonesia", "Jakarta", "237641326"};
+//		countrys [4]= new String [] {"Brazil", "Brasilia", "193946886"};
+//		countrys [5]= new String [] {"Pakistan", "Islamabad", "183748060"};
+		
+		String [][] countrys ={
+				{"China", "Peking", "1354040000"},
+				{"India", "New Delhi", "1210569573"},
+				{"USA", "Washington D.C.", "316305000"},
+				{"Indonesia", "Jakarta", "237641326"},
+				{"Brazil", "Brasilia", "193946886"},
+				{"Pakistan", "Islamabad", "183748060"}
+				
+		};
+		
+		
+		System.out.println(getPopulation(countrys));
+	}
+	
+	static long getPopulation(String[][] data){
+		long population =0;
+		for (int i = 0; i < data.length; i++) {
+		population+=Long.parseLong(data[i][2]);
+		}
+		return population;
+	}
+
+	
+	
+//	Integer.parseInt(myBuffer.toString())
+	
+	static int[] createArray(int digit){
+	int[] testArray= new int[digit];
+	for (int i = 0; i < testArray.length; i++) {
+		Random r =new Random();
+				
+		testArray [i]=r.nextInt(digit);
+	}
+	//System.out.println(Arrays.toString(testArray));
+	return testArray;
+	}
+	
+	
+}
