@@ -1,0 +1,40 @@
+package day3;
+
+public class Byrds {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// byrds {tipe, instock, price, sold}
+		String [][] byrds ={
+				{"Eagle", "2", "20", "6"},
+				{"Duck", "4", "6", "12"},
+				{"Knock", "10", "4","43"},
+				{"Pig", "1", "3", "10"}
+		};
+		System.out.println(byrrdsSold(byrds));
+		System.out.println(instockByType());
+		System.out.println(byrdsLesThenThre());
+		
+		
+	}
+	static int byrrdsSold(String [][] data){
+		int result=0;
+		for (int i = 0; i < data.length; i++) {
+			
+			result+=Integer.parseInt(data[i][3]);
+			
+		}
+	}
+	
+	static String instockByType(){
+		
+	}
+	
+	static String byrdsLesThenThre(){
+		
+	}
+}
