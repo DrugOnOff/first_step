@@ -1,0 +1,58 @@
+package day3;
+
+
+import java.util.Arrays;
+
+public class Journal {
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		printJ();
+		
+	}
+		
+		
+		
+		 static void printJ() {
+				for (int []data : journalAll) {
+					for (String s : subjects[data[0]]) {
+						System.out.print(Arrays.toString(data));
+						System.out.print(s +" ");
+						System.out.println("step");
+					}
+					for (String s : subjects[data[1]]) {
+						System.out.print(Arrays.toString(data));
+						System.out.print(s +" ");
+						System.out.println("step");
+					}
+				}
+			}
+		 
+			
+			
+			
+			static int[][] journalAll={
+					{0,0,2},
+					{0,1,4},
+					{0,2,5},
+					{2,0,2},
+					{1,3,9}
+			};
+			
+			static String[][] students={
+					{ "semen", "semenov"},
+					{"ddd", "ddddddd"},
+					{"ccc", "ccccccc"}
+					
+			};
+			
+			static String[][] subjects={
+					{"Math" , "460"},
+					{"Rus", "300"},
+					{"Eng", "500"}
+			};
+			
+	
+}
